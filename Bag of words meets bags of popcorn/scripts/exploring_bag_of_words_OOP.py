@@ -13,7 +13,7 @@ class KaggleBagOfPopcorn():
 
     #load csv to pandas dataframe 
     def loadData(self,data_file):
-        return pd.read_csv(data_path+"labeledTrainData.tsv", header=0, delimiter="\t", quoting=3)
+        return pd.read_csv(data_file, header=0, delimiter="\t", quoting=3)
 
 
     def ReviewToWords(self):
@@ -43,10 +43,10 @@ class KaggleBagOfPopcorn():
         output.to_csv("Bag_of_words_model.csv", index=False, quoting=3)
 
 
-    def main():
+    def main(self):
         #load train set 
         data_path="C:\\Users\\MedAli\\Desktop\\kaggle_competitions\\Bag of words meets bags of popcorn\\data\\"
-        train = self.loadData(data_path)
+        train = self.loadData(data_path+"labeledTrainData.tsv")
 
         #load test set        
         test= self.loadData(data_path+"testData.tsv")
